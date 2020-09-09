@@ -3,12 +3,6 @@ def clear_screen():
         print()
 
 
-def winner():
-    global game_concluded
-    print("\nPlayer O, you win!")
-    game_concluded = True
-
-
 def win_or_draw():
     global game_concluded
     if len(list_of_all_positions) > 4:
@@ -19,8 +13,10 @@ def win_or_draw():
                 list_of_o_positions and "5" in list_of_o_positions and "8" in list_of_o_positions or "3" in \
                 list_of_o_positions and "6" in list_of_o_positions and "9" in list_of_o_positions or "3" in \
                 list_of_o_positions and "5" in list_of_o_positions and "7" in list_of_o_positions or "1" in \
-                list_of_o_positions and "5" in list_of_o_positions and "9" in list_of_o_positions or "1" in \
-                list_of_x_positions and "2" in list_of_x_positions and "3" in list_of_x_positions or "4" in \
+                list_of_o_positions and "5" in list_of_o_positions and "9" in list_of_o_positions:
+            print("\nPlayer O, you win!")
+            game_concluded = True
+        elif "1" in list_of_x_positions and "2" in list_of_x_positions and "3" in list_of_x_positions or "4" in \
                 list_of_x_positions and "5" in list_of_x_positions and "6" in list_of_x_positions or "7" in \
                 list_of_x_positions and "8" in list_of_x_positions and "9" in list_of_x_positions or "1" in \
                 list_of_x_positions and "4" in list_of_x_positions and "7" in list_of_x_positions or "2" in \
@@ -28,7 +24,8 @@ def win_or_draw():
                 list_of_x_positions and "6" in list_of_x_positions and "9" in list_of_x_positions or "3" in \
                 list_of_x_positions and "5" in list_of_x_positions and "7" in list_of_x_positions or "1" in \
                 list_of_x_positions and "5" in list_of_x_positions and "9" in list_of_x_positions:
-            winner()
+            print("\nPlayer X, you win!")
+            game_concluded = True
         else:
             if len(list_of_all_positions) == 9:
                 print("\nIt's a draw!")
